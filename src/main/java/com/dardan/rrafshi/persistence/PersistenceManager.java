@@ -48,7 +48,7 @@ public abstract class PersistenceManager<K, E extends Identifiable<K>> implement
 		final E temp = this.manager.find(this.entityType, entity.getID());
 
 		if(temp != null)
-			throw new DatabaseException.RowAlreadyExist("The entity '" + this.entityType.getSimpleName() + "' with the ID '" + entity.getID() + "' already exist" );
+			throw new DatabaseException.RowAlreadyExist("The entity with the ID '" + entity.getID() + "' already exist" );
 
 		this.manager.persist(entity);
 
